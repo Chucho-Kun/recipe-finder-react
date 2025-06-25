@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import IndexPage from "./views/IndexPage"
+import IndexPage from "./views/indexPage"
 import FavoritesPage from "./views/FavoritesPage"
 
 
