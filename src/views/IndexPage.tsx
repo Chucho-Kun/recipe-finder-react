@@ -4,7 +4,7 @@ import Header from "../components/Header";
 export default function indexPage() {
   return (
     <>
-        <Header />
+       <h1>Inicio</h1>
     </>
   )
 }
