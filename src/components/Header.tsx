@@ -34,7 +34,7 @@ export default function Header() {
             return
         }
         // Consultar las recetas
-        searchRecipies()
+        searchRecipies( searchFilter )
     }
 
   return (
@@ -88,7 +88,7 @@ export default function Header() {
                             name="category"
                             className="p-3 w-full rounded-lg focus:outline-none bg-white"
                             onChange={handleChange}
-                            value={searchFilter.ingredient}
+                            value={searchFilter.category}
                         >
                             <option value="">-- Seleccione --</option>
                             { categories.drinks.map( drink => (
