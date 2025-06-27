@@ -84,7 +84,6 @@ export default function Modal() {
                             className='w-full rounded-lg bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500 cursor-pointer'
                             onClick={ () => {
                                 handleClickFavorite( selectedRecipe )
-                                closeModal()
                             } }
                         >
                         { favoriteExist( selectedRecipe.idDrink ) ? 'Eliminar de mis Favoritos' : 'Agregar a mis Favoritos' }

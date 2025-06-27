@@ -13,7 +13,7 @@ export default function Header() {
     const { pathname } = useLocation()
     const isHome = useMemo( () => pathname === '/' , [ pathname ] )
 
-    const { fetchCategories , searchRecipies , categories } = useAppStore()
+    const { fetchCategories , searchRecipies , categories , showNotification } = useAppStore()
 
     useEffect( () => {
         fetchCategories()
@@ -26,11 +26,14 @@ export default function Header() {
         })
     }
 
-    // TODO: Validar
     const handleSubmit = ( e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if( Object.values( searchFilter ).includes('') ){
-            console.log('todos los campos son obligatorios')
+
+            showNotification( {
+                text: 'Todos los campos son obligatorios',
+                error: true
+            } )
             return
         }
         // Consultar las recetas
