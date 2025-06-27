@@ -15,6 +15,8 @@ export type RecipiesSliceType = {
     closeModal : () => void
 }
 
+/* export const createRecipiesSlice : StateCreator<RecipiesSliceType & FavoritesSliceType, [], [], RecipesSliceType> = ( set ) => */
+
 export const createRecipiesSlice : StateCreator<RecipiesSliceType> = ( set ) => ({
     categories: {
         drinks:[]

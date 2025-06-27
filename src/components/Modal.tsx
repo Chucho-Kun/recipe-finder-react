@@ -5,7 +5,7 @@ import type { Recipe } from '../types';
 
 export default function Modal() {
 
-    const { modal , closeModal , selectedRecipe } = useAppStore()
+    const { modal , closeModal , selectedRecipe , handleClickFavorite , favoriteExist } = useAppStore()
 
     const renderIngredients = () => {
 
@@ -29,7 +29,7 @@ export default function Modal() {
   return (
     <>
       <Transition appear show={modal} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={() => closeModal() }>
+        <Dialog as="div" className="relative z-10" onClose={ closeModal }>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -82,8 +82,12 @@ export default function Modal() {
                         <button
                             type='button'
                             className='w-full rounded-lg bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500 cursor-pointer'
+                            onClick={ () => {
+                                handleClickFavorite( selectedRecipe )
+                                closeModal()
+                            } }
                         >
-                            agregar a favoritos
+                        { favoriteExist( selectedRecipe.idDrink ) ? 'Eliminar de mis Favoritos' : 'Agregar a mis Favoritos' }
                         </button>
                     </div>
 
