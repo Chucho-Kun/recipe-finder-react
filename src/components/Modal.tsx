@@ -1,5 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, type JSX } from 'react';
 import { useAppStore } from '../stores/useAppStore';
 import type { Recipe } from '../types';
 
@@ -8,8 +8,9 @@ export default function Modal() {
     const { modal , closeModal , selectedRecipe , handleClickFavorite , favoriteExist } = useAppStore()
 
     const renderIngredients = () => {
+      if( !selectedRecipe ) return null;
 
-        const ingredients : JSX.Element[] = []
+        const ingredients : JSX.Element[] = [] 
         for( let i = 1 ; i <= 6 ; i++ ){
             const ingredient = selectedRecipe[ `strIngredient${ i }` as keyof Recipe ]
             const measure = selectedRecipe[ `strMeasure${ i }` as keyof Recipe ]
@@ -23,7 +24,7 @@ export default function Modal() {
             }
         }
 
-        return ( ingredients )
+        return ingredients;
     }
 
   return (
