@@ -1,6 +1,10 @@
 # Recipe Search
 A recipe search engine to prepare different drinks, allowing you to save your favorites in a different section
 
+![Screenshot1](src/assets/screen1.png)
+
+![Screenshot3](src/assets/screen3.png)
+
 ## Technologies
 React + Typescript + TailwindCSS + Zustand + React Router + API www.thecocktaildb.com
 ## Deploy on Netlify
