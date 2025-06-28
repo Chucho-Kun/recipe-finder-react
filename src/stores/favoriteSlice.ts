@@ -10,9 +10,6 @@ export type FavoritesSliceType = {
     loadLocalStorage: () => void
 }
 
-/*export const createFavoritesSlice : StateCreator<FavoritesSliceType & RecipesType, [], [], FavoritesSliceType> = ( set , get , api ) => ... */
-/* createRecipesSlice( set, get , api).closeModal() */
-
 export const createFavoritesSlice : StateCreator<FavoritesSliceType & RecipiesSliceType & NotificationSliceType, [], [], FavoritesSliceType> = ( set , get , api ) => ({
     favorites:[],
     handleClickFavorite: (recipe) => {
