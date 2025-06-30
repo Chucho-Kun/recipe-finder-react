@@ -45,7 +45,9 @@ export default function Header() {
         <div className="mx-auto container px-5 py-16">
             <div className="flex justify-between items-center">
                 <div>
-                    <img className="w-32" src="/logo.svg" alt="logo buscador" />
+                    <a href="/">
+                        <img className="w-32 cursor-pointer hover:bg-gray-600 rounded-2xl p-3" src="/logo.svg" alt="logo buscador" />
+                    </a>
                 </div>
                 <nav className="flex gap-4">
                     <NavLink 
@@ -56,6 +58,10 @@ export default function Header() {
                         className={ ({isActive}) => isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase font-bold' }
                         to="/favoritos"
                     >Favoritos</NavLink>
+                    <NavLink
+                        className={ ({isActive}) => isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase font-bold' }
+                        to="/generate"
+                    >Generar con IA</NavLink>
                 </nav>
             </div>
             
