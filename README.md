@@ -5,8 +5,10 @@ A recipe search engine to prepare different drinks, allowing you to save your fa
 
 ![Screenshot3](src/assets/screen3.png)
 
+![Screenshot3](src/assets/screen4.png)
+
 ## Technologies
-React + Typescript + TailwindCSS + Zustand + React Router + API www.thecocktaildb.com
+React + Typescript + TailwindCSS + Zustand + React Router + API www.thecocktaildb.com + OpenRouter AI
 ## Deploy on Netlify
 Website hosted on netlify.app server
 [recipe-finder](https://recipe-finder-react-typescript.netlify.app/)
@@ -159,4 +161,24 @@ export const createNotificationSlice :  StateCreator<NotificationSliceType & Fav
         })
     }
 })
+```
+### Managed by OpenRouter AI
+#### src/services/AIService.ts
+```
+import { streamText } from 'ai'
+import { openrouter } from '../lib/ai'
+
+export default {
+    async generateRecipe( prompt : string ){
+        
+        const result = streamText({
+            model: openrouter('nvidia/llama-3.3-nemotron-super-49b-v1:free'),
+            prompt,
+            system:'Responde como un bartender experimentado',
+            temperature: 1 // 0 -> respuesta exacta, 1 -> respuesta random
+        })
+        //console.log(result.textStream)
+        return result.textStream
+    }
+}
 ```
