@@ -182,3 +182,20 @@ export default {
     }
 }
 ```
+### Managed routing
+```
+* router.tsx
+<BrowserRouter basename="/portfolio/react/recetas">
+
+* vite.config.ts
+export default defineConfig({
+  base: '/portfolio/react/recetas/',
+  plugins: [
+    tailwindcss(),
+  ],
+})
+
+* package.json 
+  "homepage": "https://storiesbehindsongs.com.mx/portfolio/react/recetas",
+
+```
