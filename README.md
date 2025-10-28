@@ -1,6 +1,13 @@
 # Recipe Search
 A recipe search engine to prepare different drinks, allowing you to save your favorites in a different section
 
+## 🚀 Tech Stack
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=blue)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![React Router](https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-3E92CC?style=for-the-badge&logo=zod&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-000000?style=for-the-badge&logo=zustand&logoColor=white)
+
 ![Screenshot1](src/assets/screen1.png)
 
 ![Screenshot3](src/assets/screen3.png)
